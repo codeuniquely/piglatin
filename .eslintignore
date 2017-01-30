@@ -1,0 +1,5 @@
+server.js
+build/*
+src/assets/**
+node_modules/*
+**/node_modules/*
