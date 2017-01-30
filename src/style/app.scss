@@ -48,4 +48,52 @@ small {
 }
 .container {
   padding: 10px;
+  .previous {
+    width:100%;
+    height: 11em;
+    min-height: 11em;
+    border: 1px solid $gray-lighter;
+    ul {
+      margin: 0.5em 0;
+      .entry {
+        text-align: left;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: elipsis;
+      }
+    }
+  }
+  .note {
+    margin-bottom: 1em;
+  }
+  // match the rows & cols defined on mark-up
+  input[type="textarea"] {
+    width:100%;
+    height: 1.25em;
+    color: $gray-light;
+    word-break: break-all;
+  }
+  .output {
+    padding: 0 10px;
+    width:100%;
+    font-size: 22pt;
+    height: 1.25em;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: elipsis;
+  }
+  .history {
+    h3 {
+      line-height: 22pt;
+      vertical-align: middle;
+      small {
+        line-height: 22pt;
+        vertical-align: middle;
+      }
+    }
+    ul {
+      padding: 0 10px;
+      line-height: 1em
+    }
+  }
 }
