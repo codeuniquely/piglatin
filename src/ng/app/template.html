@@ -1,0 +1,26 @@
+<div class="container">
+  <h1>igpay atinlay</h1>
+  <form name="form" novalidate class="css-form">
+    <h2>Please enter word(s) or sentance(s)</h2>
+    <input
+      type="textarea"
+      rows="1"
+      ng-model="model.input"
+      enter-key="addEntry()"
+      ensure-text />
+    <input type="checkbox" ng-model="model.useWiki" id="useWiki"/>
+    <label for="useWiki">Use the wikipedia method</label>
+    <h2>The <span ng-show="model.useWiki">wikipedia&nbsp;</span><q>pig-latin</q> is:<h2>
+    <div class="output" ng-bind="model.converted"></div>
+  </form>
+  <div class="history">
+    <h3>Previous conversions<small ng-bind="message()"></small></h3>
+    <div class="previous">
+      <ul>
+        <li ng-repeat="entry in model.entries">
+          <div class="entry" ng-bind="entry"></div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
