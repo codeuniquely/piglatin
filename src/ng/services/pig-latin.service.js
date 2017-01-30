@@ -48,9 +48,69 @@
 
 import angular from 'angular';
 
+const regex = /[aeiou]/gi;
+
 class service {
 
   constructor() {
+    this.bindFunctions();
+  }
+
+  bindFunctions() {
+    this.translate = this.convertToPigLatin.bind(this);
+  }
+
+  // private function
+  convertToPigLatin(text, useWiki) {
+    // if its not a string or undefined then the answer is ''
+    if ( !text || typeof text !== 'string') {
+      return '';
+    }
+
+    // split text string into separate words
+    let words = text.split(' ');
+
+    let converted = [];
+    words.forEach( word => {
+      if (word.length) {
+        let pig, first = word[0];
+        if (first.match(regex)) {
+          pig = useWiki ? this.wikiStartsVowel(word) : this.testStartsVowel(word);
+        } else {
+          pig = useWiki ? this.wikiStartsConsonant(word) : this.testStartsConsonant(word);
+        }
+        converted.push(pig);
+      }
+    });
+
+    return converted.join(' ');
+  }
+
+  // move first letter to end and add 'i'
+  testStartsVowel(word) {
+    let first = word[0];
+    let rest = word.substr(1);
+    return `${rest}${first}i`;
+  }
+
+  // append 'way' to the end of word
+  wikiStartsVowel(word) {
+    return `${word}way`;
+  }
+
+  // move first letter to end and add 'ay'
+  testStartsConsonant(word) {
+    let first = word[0];
+    let rest = word.substr(1);
+    return `${rest}${first}ay`;
+  }
+
+  // find all consonants in cluster, move to end & add 'ay'
+  wikiStartsConsonant(word) {
+    let index = word.indexOf(word.match(regex)[0]);
+    let first = word.substr(0, index);
+    let rest = word.substr(index);
+    return `${rest}${first}ay`;
   }
 }
 
