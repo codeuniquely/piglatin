@@ -1,8 +1,15 @@
-// ---------- Local Server Commands ----------
-//
-// To install development environemnt   npm install
-//
-// To run a npm local server            npm start
-//
-// connect to Server                    http://localhost:3000
-//
+## Install and Run Commands ##
+
+### To install the development environment###
+
+     npm install
+
+###To run a npm local server###
+
+     npm start
+
+###Connect to Webpack Dev Server (app)###
+
+     http://localhost:3000
+
+
