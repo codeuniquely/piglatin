@@ -13,3 +13,5 @@
      http://localhost:3000
 
 
+Please note that there is difference between https://en.wikipedia.org/wiki/Pig_Latin and alternate implementaion here.
+You can toggle between implementaions using the checkbox on the UI....
