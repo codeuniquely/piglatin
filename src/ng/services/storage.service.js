@@ -48,7 +48,8 @@ class service {
       if (entry) {
         values.push(entry);
       }
-      (++index) % this.size;
+      // *** because babel turns (++index) % this.size => (++index % this.size)
+      index = (index + 1) % this.size;
     }
     return values;
   }
