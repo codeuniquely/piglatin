@@ -1,0 +1,31 @@
+# -*- conf -*-
+# Logs
+logs
+*.log
+
+# Debug log from npm
+npm-debug.log
+
+# Not meant to be in git
+*.nogit*
+*.DS_Store
+[Tt]humbs.db
+
+# Sublime Text
+*.sublime-*
+
+# sass
+.sass-cache
+
+# Dependency directory
+node_modules
+
+# bower
+lib/*
+!src/lib/*
+
+# generated
+build
+README.html
+.#*
+.~*
